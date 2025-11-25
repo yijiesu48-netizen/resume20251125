@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>履歷表 — 蘇以倢 (亞洲大學 經營管理系)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f9fc; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4;
+      --radius:14px; --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,var(--bg),#eef3f8); padding:28px; display:flex; align-items:center; justify-content:center; min-height:100vh}
+    .resume{width:100%; max-width:var(--maxw); background:var(--card); border-radius:18px; box-shadow:0 10px 30px rgba(8,15,25,0.08); overflow:hidden; display:grid; grid-template-columns:320px 1fr}
+    .side{background:linear-gradient(180deg,#ffffff, #f3fbfb); padding:28px; border-right:1px solid rgba(10,10,10,0.03); display:flex; flex-direction:column; justify-content:space-between}
+    .name{font-size:20px; font-weight:700; margin-top:16px}
+    .role{color:var(--muted); margin-top:6px; font-size:13px}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent); margin:20px 0}
+    .info{font-size:14px; color:var(--muted); line-height:1.6}
+    .skill-list{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .skill{background:rgba(255,255,255,0.6); padding:6px 10px; border-radius:10px; font-size:13px}
+    .main{padding:28px 32px}
+    header{display:flex; align-items:flex-start; justify-content:space-between}
+    .headline{margin-bottom:6px}
+    h1{font-size:20px; margin:0}
+    p.summary{margin:6px 0 18px; color:var(--muted)}
+    section{margin-bottom:18px}
+    .section-title{display:flex; align-items:center; gap:10px; font-weight:700; color:#0f172a}
+    .item{padding:12px 0; border-bottom:1px dashed rgba(15,23,42,0.04)}
+    .item:last-child{border-bottom:none}
+    .item h3{margin:0; font-size:15px}
+    .meta{color:var(--muted); font-size:13px; margin-top:6px}
+    .bullets{margin-top:8px; color:#374151; font-size:14px}
+    .controls{display:flex; gap:10px; margin-bottom:12px}
+    .btn{background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600}
+    .btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(14,165,164,0.12)}
+    @media (max-width:820px){.resume{grid-template-columns:1fr}.side{order:2}.main{order:1}}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="resume" id="resume">
+    <aside class="side">
+      <div>
+        <div class="name">蘇以倢</div>
+        <div class="role">亞洲大學 | 經營管理系</div>
+        <div class="divider"></div>
+        <div class="info">
+          <div><strong>聯絡方式</strong></div>
+          <div style="margin-top:8px">
+            <div id="email">114031091@live.asia.edu.tw</div>
+            <div id="location">台中市, 台灣</div>
+          </div>
+          <div style="margin-top:14px"><strong>學歷</strong></div>
+          <div style="margin-top:8px">亞洲大學 — 經營管理系 (在學)</div>
+          <div class="meta">入學年：2024 • 主修：行銷與企業管理組</div>
+          <div style="margin-top:14px"><strong>技能</strong></div>
+          <div class="skill-list" id="skills">
+            <div class="skill">溝通協調</div>
+            <div class="skill">時間管理</div>
+            <div class="skill">簡報製作</div>
+            <div class="skill">Excel / Google Sheets</div>
+            <div class="skill">基礎會計概念</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="controls">
+        <button class="btn" id="exportPdf">匯出 PDF</button>
+      </div>
+      <header>
+        <div>
+          <div class="headline">
+            <h1 id="title">個人履歷 — 蘇以倢</h1>
+            <div class="role">目標：成為經營管理領域的優秀人才 / 行銷與管理實務發展</div>
+          </div>
+          <p class="summary" id="summary">自我介紹：我具備自律、積極與良好的溝通與領導能力。在高中擔任熱舞社副社長，培養團隊合作與時間管理能力，並在多項校內外比賽中取得佳績。期望在大學期間深入學習行銷與管理，並透過實務經驗為未來職涯或創業做準備。</p>
+        </div>
+      </header>
+      <section>
+        <div class="section-title">教育經歷</div>
+        <div class="item">
+          <h3>亞洲大學 — 經營管理系</h3>
+          <div class="meta">2024 - 現在 • 行銷與企業管理組</div>
+          <div class="bullets">
+            • 選修課程：管理學、行銷學、會計學、經濟學、統計學<br>
+            • 校內專題：待填入（可放置修課專題或實作）
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="section-title">實務與專案經驗</div>
+        <div class="item">
+          <h3>社團活動 — 熱舞社（副社長）</h3>
+          <div class="meta">高中 • 組織協調與時間管理</div>
+          <div class="bullets">
+            • 帶領練習、安排排練時間並協調成員分工。<br>
+            • 訓練新社員並策劃公演流程與舞台活動。
+          </div>
+        </div>
+        <div class="item">
+          <h3>菸害防制才藝比賽 — 團體表演</h3>
+          <div class="meta">縣內比賽 • 第五名</div>
+          <div class="bullets">• 在短時間內完成高效率練習並準備舞台演出，培養壓力下冷靜應對的能力。</div>
+        </div>
+      </section>
+      <section>
+        <div class="section-title">職涯目標</div>
+        <div class="item">
+          <div class="bullets">短期：在大學期間累積行銷與管理實務經驗（參與社團、專題、實習）。<br>長期：成為行銷或企業管理領域的專業人才，並嘗試創業或擔任品牌經理。</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('exportPdf').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({unit: 'pt', format: 'a4'});
+      doc.html(document.getElementById('resume'), {
+        callback: function (doc) {
+          doc.save('履歷表_蘇以倢.pdf');
+        },
+        x: 20,
+        y: 20,
+        html2canvas: {scale:0.6}
+      });
+    });
+  </script>
+</body>
+</html>
